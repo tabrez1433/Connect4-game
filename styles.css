@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+#board {
+    height: 463px;
+    width: 540px;
+    background-color: rgb(29, 183, 194);
+    border: 10px solid rgb(8, 6, 138);
+    border-radius: 25px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    color: rgb(13, 13, 197);
+    letter-spacing: 1px;
+}
+
+h2 {
+    letter-spacing: 1px;
+    margin: -15px 0 10px 0;
+}
+
+.tile {
+    height: 65px;
+    width: 65px;
+    margin: 3px;
+
+    /* Circle */
+    background-color: rgb(226, 226, 226);
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.red-piece {
+    background-color: red;
+}
+
+.green-piece {
+    background-color: green;
+}
+
+.green-win {
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.red-win {
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    padding: 0.3rem;
+}
