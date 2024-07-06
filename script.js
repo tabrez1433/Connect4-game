@@ -9,6 +9,8 @@ const rows = 6;
 const columns = 7;
 let currColumns = []; //keeps track of which row each column is at.
 
+let restartTimeoutId;
+
 window.onload = () => {
     setGame();
 }
@@ -34,7 +36,6 @@ function setGame() {
         }
         board.push(row);
     }
-
 }
 
 function setPiece() {
@@ -62,7 +63,6 @@ function setPiece() {
         const green = document.getElementById("winner");
         green.innerText = "Green Turn";
         green.style.color = "green";
-
     }
     else {
         tile.classList.add("green-piece");
@@ -127,13 +127,13 @@ function setWinner(r, c) {
     gameOver = true;
 
     //restart game after 5 seconds with a new game board
-    setTimeout(() => {
+    restartTimeoutId = setTimeout(() => {
         winner.classList.remove("red-win", "green-win");
         gameOver = false;
         currPlayer = playerRed;
         document.getElementById("board").innerHTML = "";
         setGame();
-    }, 5000); //5 seconds
+    }, 5000);
 }
 
 //refresh the page to start a new game.
@@ -143,14 +143,18 @@ function setWinner(r, c) {
 // }
 
 //reset the page to start a new game.
-function reStart(){
+function reStart() {
+    // Cancel the timeout if it's set
+    if (restartTimeoutId) {
+        clearTimeout(restartTimeoutId);
+        restartTimeoutId = null;
+    }
     document.getElementById("winner").classList.remove("red-win", "green-win");
     gameOver = false;
     currPlayer = playerRed;
     document.getElementById("board").innerHTML = "";
     setGame();
 }
-
 
 function copyright() {
     document.querySelector('.footer').innerHTML = `tabrez&copy;${new Date().getFullYear()}`;
