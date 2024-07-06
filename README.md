@@ -1,7 +1,8 @@
 # Connect 4 Game
 
 *This is a simple Connect 4 game implementation using HTML, CSS, and JavaScript. The game allows two players to take turns placing pieces on a board, and the first player to connect four pieces in a row, column, or diagonal wins.*  
-![connect 4](https://github.com/tabrez1433/InternPe-Connect4/assets/152283368/af369da9-78da-4769-9d18-d0629d86a56e)
+![Connect4](https://github.com/tabrez1433/InternPe-Connect4/assets/152283368/27469e76-bfaf-4e6a-a0fc-e76eded49313)
+
 
 ## Files:-  
 
