@@ -125,6 +125,7 @@ function setWinner(r, c) {
     winner.innerText = board[r][c] == playerRed ? "Red Wins! Game will restart in 5 sec." : "Green Wins! Game will restart in 5 sec.";
     winner.style = winner.innerText == "Red Wins! Game will restart in 5 sec." ? winner.classList.add("red-win") : winner.classList.add("green-win");
     gameOver = true;
+
     //restart game after 5 seconds with a new game board
     setTimeout(() => {
         winner.classList.remove("red-win", "green-win");
@@ -135,8 +136,24 @@ function setWinner(r, c) {
     }, 5000); //5 seconds
 }
 
+//refresh the page to start a new game.
+// function reStart(){
+//     window.location.reload(); 
+//     return;
+// }
+
+//reset the page to start a new game.
+function reStart(){
+    document.getElementById("winner").classList.remove("red-win", "green-win");
+    gameOver = false;
+    currPlayer = playerRed;
+    document.getElementById("board").innerHTML = "";
+    setGame();
+}
+
+
 function copyright() {
-    document.querySelector('.footer').innerHTML = `tabrez &copy; ${new Date().getFullYear()}`;
+    document.querySelector('.footer').innerHTML = `tabrez&copy;${new Date().getFullYear()}`;
 }
 document.addEventListener('DOMContentLoaded', copyright);
 
